@@ -1,0 +1,22 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': post.loveIts > 0,
+                'list-group-item-danger': post.loveIts < 0}">
+
+    <div class="row">
+    <div class="col">
+      <h2>{{getTitle()}}</h2>
+    </div>
+    <div class="col-auto">
+      <p>{{getDate() | date: 'short'}}</p>
+    </div>
+  </div>
+  <p>{{getContent()}}</p>
+  <div class="row">
+
+
+    <p class="m-2">Love : {{getLove()}}</p>
+    <button type="button" class="btn btn-success m-2" (click)="upvote()">Love it!</button>
+    <button type="button" class="btn btn-danger m-2 "(click)="downvote()">Don't love it!</button>
+  </div>
+</li>
+
